@@ -4,17 +4,17 @@ USE `cleaning_management`;
 CREATE TABLE `diarist` (
 `id` INT AUTO_INCREMENT NOT NULL,
 `cpf` VARCHAR(14) NOT NULL UNIQUE,
-`name` VARCHAR(250) NOT NULL UNIQUE,
+`name` VARCHAR(250) NOT NULL,
 PRIMARY KEY (`id`),
-INDEX (`name`)
+INDEX (`cpf`)
 );
 
 CREATE TABLE `client` (
 `id` INT AUTO_INCREMENT NOT NULL,
 `cpf` VARCHAR(14) NOT NULL UNIQUE,
-`name` VARCHAR(250) NOT NULL UNIQUE,
+`name` VARCHAR(250) NOT NULL,
 PRIMARY KEY (`id`),
-INDEX (`name`)
+INDEX (`cpf`)
 );
 
 CREATE TABLE `size` (
@@ -26,10 +26,10 @@ PRIMARY KEY (`id`)
 
 CREATE TABLE `residence` (
 `id` INT AUTO_INCREMENT NOT NULL,
-`city` VARCHAR(255) NOT NULL,
-`district` VARCHAR(255) NOT NULL,
-`street` VARCHAR(255) NOT NULL,
-`complement` VARCHAR(255) NOT NULL,
+`city` VARCHAR(150) NOT NULL,
+`district` VARCHAR(150) NOT NULL,
+`street` VARCHAR(150) NOT NULL,
+`complement` VARCHAR(50) NOT NULL,
 `number` INT UNSIGNED NOT NULL,
 `id_size` INT NOT NULL,
 `id_client` INT NOT NULL,
